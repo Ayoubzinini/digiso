@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException
-from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 import time
 from bs4 import BeautifulSoup
@@ -16,7 +16,7 @@ cp=[]
 city=[]
 target_location=input('Cible : ')
 for i in string.ascii_uppercase:
-    b = webdriver.Firefox(executable_path=GeckoDriverManager().install()
+    b = webdriver.Chrome(ChromeDriverManager().install())
     time.sleep(0.25)
     try :
         b.get('https://www.fr.canada411.ca/search/si/1/'+i+'/'+target_location+'+QC/rci-'+target_location)
